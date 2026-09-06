@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } },
+    { "src": "api/**/*.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": "https://apikkjrccpqsfglbgedu.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_WXQZK_3HCaOcOFMDAREgfg_zap81Voe",
+    "SUPABASE_SERVICE_ROLE_KEY": "sb_secret_12V5cRJfqELG3h5h4_-9TA_ND9_JgC7",
+    "VITE_SUPABASE_URL": "https://apikkjrccpqsfglbgedu.supabase.co",
+    "VITE_SUPABASE_ANON_KEY": "sb_publishable_WXQZK_3HCaOcOFMDAREgfg_zap81Voe",
+    "VITE_GOOGLE_CLIENT_ID": "1065078894672-rmp5kp8vfjns5rn9kp5psfp16g691043.apps.googleusercontent.com",
+    "VITE_GOOGLE_AUTH_PROXY": "https://designarena.ai/auth/google/callback",
+    "FULLSTACK_PROJECT_REF": "apikkjrccpqsfglbgedu",
+    "FULLSTACK_RESTORE_API_URL": "https://designarena.ai/api/fullstack-restore"
+  }
+}
